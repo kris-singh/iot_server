@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>
+</title>
+</head>
+<body>
+<form action="../bssid_insert.php" method="post">
+  Bssid<input type="text" name="bssid"><br>
+  Item<input type="text" name="item[]"><br>
+  <div id = "add" style = "width:50px;height:30px;position:absolute;right:1000px;">
+  	<img src="../static/images/add.png" style="max-height: 100%;">
+  </div>
+  Request:<input type="checkbox" name = "req"></input>
+  <input type="submit" value="Submit">
+</form>
+</body>
+<script type="text/javascript">
+	document.getElementById("add").addEventListener("click", add_more);
+	function add_more() {
+		// body...
+		var el = document.getElementsByTagName("form")[0];
+		var new_el = document.createElement("input");
+		new_el.setAttribute('name','item[]');
+		new_el.style.display = 'block';
+		el.appendChild(new_el); 
+	}
+
+</script>
+</html>
